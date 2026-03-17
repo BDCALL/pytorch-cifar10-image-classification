@@ -35,3 +35,17 @@ The dataset is automatically downloaded using `torchvision`.
 1. **Install dependencies**  
    ```bash
    pip install torch torchvision matplotlib
+
+2. **Prepare the Dataset**
+Apply the following transforms to the dataset for preprocessing and augmentation:
+
+- `RandomHorizontalFlip()` – for data augmentation  
+- `RandomCrop()` – to vary image regions  
+- `ColorJitter()` – to adjust brightness, contrast, saturation, and hue  
+- `ToTensor()` – to convert images to PyTorch tensors  
+- `Normalize()` – using CIFAR-10 mean `[0.4914, 0.4822, 0.4465]` and standard deviation `[0.2023, 0.1994, 0.2010]`
+
+3. **Create data loaders**
+
+- Use torch.utils.data.DataLoader
+- Set batch size (default: 64) and shuffle the training data
