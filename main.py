@@ -144,4 +144,9 @@ with torch.no_grad():
             print(f'Class {i} ({class_map[i]}): No samples')
 
 # Saving the model
-torch.save(model.state_dict,"cifar10.pth")
+torch.save(model.state_dict(),"cifar10.pth")
+
+# Load the model 
+model = NeuralNet()
+model.load_state_dict(torch.load("cifar10.pth"))
+model.eval()
